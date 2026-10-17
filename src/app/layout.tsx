@@ -16,7 +16,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fictiousdesigns.vercel.app"),
+  metadataBase: new URL("https://fictious-designs.vercel.app"),
   title: {
     default: "Fictious Designs | Design, Branding e Presenca Digital",
     template: "%s | Fictious Designs",
