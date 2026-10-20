@@ -17,7 +17,7 @@ import LeadForm from "@/app/components/LeadForm";
 
 
 export const metadata: import("next").Metadata = {
-  title: "Design, Branding e Presenca Digital em Mocambique",
+  title: "Fictious Designs",
   description: "A Fictious Designs cria identidades visuais, websites e estrategias digitais para empresas e marcas em Mocambique.",
   alternates: {
     canonical: "/",
