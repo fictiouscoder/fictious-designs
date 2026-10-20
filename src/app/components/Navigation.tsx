@@ -1,16 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const navigationLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Pacotes", href: "#pacotes" },
-  { label: "Portfólio", href: "#portfolio" },
-  { label: "Processo", href: "#processo" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Início", href: "/#inicio" },
+  { label: "Serviços", href: "/servicos" },
+  { label: "Pacotes", href: "/#pacotes" },
+  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Processo", href: "/#processo" },
+  { label: "Contacto", href: "/contactos" },
 ];
 
 export default function Navigation() {
@@ -21,36 +22,46 @@ export default function Navigation() {
   }
 
   return (
-<nav className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#09090B]/70 backdrop-blur-2xl transition-colors duration-300">      <div className="relative flex min-h-[68px] items-center justify-between px-5 py-4 sm:px-6 md:px-16">
+    <nav className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#09090B]/80 backdrop-blur-2xl transition-colors duration-300">
+      <div className="relative flex h-[76px] items-center justify-between gap-4 px-5 sm:px-6 md:px-12 lg:px-16">
+        {/* Logótipo oficial */}
         <Link
           href="/"
           onClick={closeMenu}
-          className="shrink-0 text-xl font-bold tracking-tight"
+          aria-label="Fictious Designs — página inicial"
+          className="flex shrink-0 items-center"
         >
-          FICTIOUS<span className="text-violet-500">.</span>
+          <Image
+            src="/FD%20LOGO%20%20Branco.png"
+            alt="Fictious Designs"
+            width={240}
+            height={100}
+            priority
+            className="h-[56px] w-auto max-w-[100px] object-contain sm:h-[54px] sm:max-w-[150px] lg:h-[150px] lg:max-w-[290px]"
+          />
         </Link>
 
         {/* Navegação desktop */}
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-5 lg:flex xl:gap-6">
           {navigationLinks.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-zinc-400 transition-colors duration-200 hover:text-white"
+              className="whitespace-nowrap text-sm text-zinc-400 transition-colors duration-200 hover:text-white"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* CTA desktop */}
-        <a
-          href="#contacto"
-          className="hidden items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm transition-all duration-300 hover:border-violet-400/50 hover:bg-violet-500/10 sm:inline-flex"
+        <Link
+          href="/contactos"
+          className="hidden shrink-0 items-center gap-2 rounded-full border border-white/20 px-4 py-2.5 text-sm transition-all duration-300 hover:border-violet-400/50 hover:bg-violet-500/10 xl:inline-flex"
         >
           Vamos conversar
           <ArrowUpRight size={16} />
-        </a>
+        </Link>
 
         {/* Botão mobile */}
         <button
@@ -72,7 +83,7 @@ export default function Navigation() {
           >
             <div className="flex flex-col">
               {navigationLinks.map((item, index) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={closeMenu}
@@ -82,17 +93,17 @@ export default function Navigation() {
                   <span className="text-xs text-zinc-600">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                </a>
+                </Link>
               ))}
 
-              <a
-                href="#contacto"
+              <Link
+                href="/contactos"
                 onClick={closeMenu}
                 className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-violet-600 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-violet-500"
               >
                 Iniciar um projeto
                 <ArrowUpRight size={17} />
-              </a>
+              </Link>
             </div>
           </div>
         )}

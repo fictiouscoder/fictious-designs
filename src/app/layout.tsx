@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
@@ -57,7 +58,11 @@ export default function RootLayout({
       lang="pt"
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col"><StructuredData />{children}</body>
+      <body className="flex min-h-full flex-col">
+        <StructuredData />
+        {children}
+        <GoogleAnalytics gaId="G-RP7J49NQKT" />
+      </body>
     </html>
   );
 }

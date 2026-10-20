@@ -1,3 +1,5 @@
+import Image from "next/image";
+import LogoMarquee from "@/app/components/LogoMarquee";
 import Footer from "@/app/components/Footer";
 import Navigation from "@/app/components/Navigation";
 import {
@@ -39,14 +41,14 @@ export default function Home() {
 
       <section
   id="inicio"
-  className="relative isolate overflow-hidden border-b border-white/10 px-5 py-12 sm:px-6 sm:py-16 md:px-16 lg:py-28"
+  className="relative isolate overflow-hidden border-b border-white/10 px-5 py-10 sm:px-6 sm:py-12 md:px-16 lg:py-16 xl:py-20"
 >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-40 top-20 -z-10 h-80 w-80 rounded-full bg-violet-700/10 blur-[120px]"
         />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-8 sm:gap-10 lg:min-h-[70vh] lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 sm:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
           <div className="relative z-10">
             <div className="hero-enter hero-enter-1 mb-8 flex items-center gap-3">
               <span className="h-px w-10 bg-violet-500" />
@@ -121,10 +123,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+            </section>
+
+      <LogoMarquee />
 
       {/* Serviços */}
-      <section id="servicos" className="scroll-mt-24 px-5 py-16 sm:px-6 md:px-16 lg:py-24">
+      <section id="servicos" className="scroll-mt-24 px-5 py-12 sm:px-6 sm:py-14 md:px-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.25em] text-violet-400">
@@ -161,13 +165,13 @@ export default function Home() {
                 icon: Share2,
               },
               {
-                number: "03",
-                title: "Desenvolvimento Web",
-                description:
-                  "Desenvolvemos websites responsivos, modernos e intuitivos, alinhados com os objectivos do teu negócio.",
-                contratacao: "Projectos personalizados",
-                icon: Monitor,
-              },
+  number: "03",
+  title: "UI/UX Design & Desenvolvimento Web",
+  description:
+    "Concebemos interfaces intuitivas e desenvolvemos websites modernos e responsivos, combinando experiência do utilizador, design e tecnologia para responder aos objectivos do teu negócio.",
+  contratacao: "Projectos personalizados",
+  icon: Monitor,
+},
               {
                 number: "04",
                 title: "Marketing Digital & Ads",
@@ -236,10 +240,19 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
             })}
           </div>
         </div>
+        <div className="mt-10 flex justify-center">
+  <a
+    href="/servicos"
+    className="inline-flex items-center gap-3 rounded-full border border-white/15 px-6 py-3.5 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-violet-400/60 hover:bg-violet-500/[0.06]"
+  >
+    Explorar todos os serviços
+    <ArrowUpRight size={17} />
+  </a>
+</div>
       </section>
 
       {/* Pacotes */}
-      <section id="pacotes" className="scroll-mt-24 px-5 py-16 sm:px-6 sm:py-20 md:px-16 lg:py-32">
+      <section id="pacotes" className="scroll-mt-24 px-5 py-12 sm:px-6 sm:py-14 md:px-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.25em] text-violet-400">
@@ -252,10 +265,11 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
               <span className="text-violet-400">Presença com propósito.</span>
             </h2>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-400 md:text-lg">
-              Soluções criativas pensadas para diferentes necessidades, com
-              propostas adaptadas aos objectivos de cada negócio.
-            </p>
+            <p className="relative mt-5 max-w-lg text-sm leading-7 text-zinc-400 md:text-base">
+  Ideal para marcas que procuram começar ou manter uma presença
+  profissional nas redes sociais, com conteúdos organizados e uma
+  comunicação visual consistente.
+</p>
           </div>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
@@ -268,7 +282,7 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
               <div className="relative flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-violet-400">
-                    01 — Branding & Design
+                    01 - PACOTE
                   </p>
                   <h3 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     Essence
@@ -287,43 +301,43 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
               </p>
 
               <div className="relative mt-8 border-t border-white/[0.08] pt-6">
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
-                  Ideal para
-                </p>
+  <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+    Ideal para
+  </p>
 
-                <ul className="mt-4 space-y-3 text-sm text-zinc-300">
-                  <li className="flex items-start gap-3">
-                    <ArrowUpRight
-                      size={16}
-                      className="mt-0.5 shrink-0 text-violet-400"
-                    />
-                    Criação ou renovação da identidade visual;
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <ArrowUpRight
-                      size={16}
-                      className="mt-0.5 shrink-0 text-violet-400"
-                    />
-                    Materiais gráficos e comunicação de marca;
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <ArrowUpRight
-                      size={16}
-                      className="mt-0.5 shrink-0 text-violet-400"
-                    />
-                    Projectos de design adaptados às necessidades do negócio.
-                  </li>
-                </ul>
-              </div>
+  <ul className="mt-4 space-y-3 text-sm text-zinc-300">
+    <li className="flex items-start gap-3">
+      <ArrowUpRight
+        size={16}
+        className="mt-0.5 shrink-0 text-violet-400"
+      />
+      Planeamento básico de conteúdos para redes sociais;
+    </li>
+    <li className="flex items-start gap-3">
+      <ArrowUpRight
+        size={16}
+        className="mt-0.5 shrink-0 text-violet-400"
+      />
+      Criação de designs para publicações;
+    </li>
+    <li className="flex items-start gap-3">
+      <ArrowUpRight
+        size={16}
+        className="mt-0.5 shrink-0 text-violet-400"
+      />
+      Gestão da presença digital da marca, conforme o plano contratado.
+    </li>
+  </ul>
+</div>
 
                <div className="relative mt-auto flex flex-col gap-4 border-t border-white/[0.08] pt-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-sm font-medium text-white">
-                    Orçamento personalizado
-                  </p>
-                  <p className="mt-1 text-xs text-zinc-500">
-                    Contratação por projecto
-                  </p>
+  Gestão mensal de redes sociais
+</p>
+<p className="mt-1 text-xs text-zinc-500">
+  Plano essencial para a tua marca
+</p>
                 </div>
 
                 <a
@@ -347,7 +361,7 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
               <div className="relative flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-violet-400">
-                    02 — Social Media
+                    02 - PACOTE
                   </p>
                   <h3 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-4xl">
                     Momentum
@@ -360,49 +374,49 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
               </div>
 
               <p className="relative mt-5 max-w-lg text-sm leading-7 text-zinc-400 md:text-base">
-                Para negócios que querem fortalecer a sua presença digital
-                através de conteúdos consistentes, planeamento e uma comunicação
-                alinhada com a sua identidade.
-              </p>
+  Para negócios que querem fortalecer a sua presença nas redes sociais
+  através de planeamento estratégico, conteúdos consistentes e uma
+  gestão mais estruturada da sua comunicação digital.
+</p>
 
               <div className="relative mt-8 border-t border-white/[0.08] pt-6">
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
-                  Ideal para
-                </p>
+  <p className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-500">
+    Ideal para
+  </p>
 
-                <ul className="mt-4 space-y-3 text-sm text-zinc-300">
-                  <li className="flex items-start gap-3">
-                    <ArrowUpRight
-                      size={16}
-                      className="mt-0.5 shrink-0 text-violet-400"
-                    />
-                    Planeamento estratégico de conteúdos;
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <ArrowUpRight
-                      size={16}
-                      className="mt-0.5 shrink-0 text-violet-400"
-                    />
-                    Design de publicações para redes sociais;
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <ArrowUpRight
-                      size={16}
-                      className="mt-0.5 shrink-0 text-violet-400"
-                    />
-                    Gestão e acompanhamento, conforme o plano contratado.
-                  </li>
-                </ul>
-              </div>
+  <ul className="mt-4 space-y-3 text-sm text-zinc-300">
+    <li className="flex items-start gap-3">
+      <ArrowUpRight
+        size={16}
+        className="mt-0.5 shrink-0 text-violet-400"
+      />
+      Planeamento estratégico de conteúdos;
+    </li>
+    <li className="flex items-start gap-3">
+      <ArrowUpRight
+        size={16}
+        className="mt-0.5 shrink-0 text-violet-400"
+      />
+      Criação de conteúdos e design para publicações;
+    </li>
+    <li className="flex items-start gap-3">
+      <ArrowUpRight
+        size={16}
+        className="mt-0.5 shrink-0 text-violet-400"
+      />
+      Gestão e acompanhamento contínuo das redes sociais.
+    </li>
+  </ul>
+</div>
 
                <div className="relative mt-auto flex flex-col gap-4 border-t border-white/[0.08] pt-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-sm font-medium text-white">
-                    Proposta personalizada
-                  </p>
-                  <p className="mt-1 text-xs text-zinc-500">
-                    Acompanhamento mensal
-                  </p>
+  Gestão mensal de redes sociais
+</p>
+<p className="mt-1 text-xs text-zinc-500">
+  Plano intermédio para marcas em crescimento
+</p>
                 </div>
 
                 <a
@@ -426,7 +440,7 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
       </section>
 
       {/* Portfólio */}
-      <section id="portfolio" className="scroll-mt-24 px-5 py-16 sm:px-6 md:px-16 lg:py-24">
+      <section id="portfolio" className="scroll-mt-24 px-5 py-12 sm:px-6 sm:py-14 md:px-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
@@ -447,152 +461,109 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
             </div>
 
             <span className="w-fit rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-wider text-zinc-400">
-              Projetos em preparação
+             
             </span>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Projeto 01 */}
-           <article className="scroll-reveal group rounded-2xl transition-all duration-500 ease-out motion-reduce:transition-none hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(139,92,246,0.12)]">
-              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111114] transition duration-500 group-hover:border-violet-500/30">
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(139,92,246,0.16),transparent_65%)]"
-                />
-
-                <div
-                  aria-hidden="true"
-                  className="relative flex h-40 w-40 items-center justify-center rounded-full border border-violet-400/20 transition duration-500 group-hover:scale-105 md:h-48 md:w-48"
-                >
-                  <div className="absolute inset-4 rounded-full border border-white/10" />
-                  <div className="absolute inset-10 rounded-full bg-violet-500/20 blur-2xl" />
-                  <span className="relative text-5xl font-semibold tracking-tighter text-white/80">
-                    Aa
+                        {/* Projeto 01 — DIAMAM */}
+            <article className="scroll-reveal group rounded-2xl transition-all duration-500 ease-out motion-reduce:transition-none hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(139,92,246,0.12)]">
+              <a href="/portfolio/branding" className="block">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111114] transition-colors duration-500 group-hover:border-violet-500/40">
+                  <Image
+                    src="/images/portfolio/branding/DIAMAM%20Clothing%20Brand%20Showcase.png"
+                    alt="Projeto DIAMAM Clothing Brand Showcase — identidade visual e branding"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+                  <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-white backdrop-blur-md">
+                    Branding
+                  </span>
+                  <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white backdrop-blur-md transition duration-300 group-hover:bg-violet-600">
+                    <ArrowUpRight size={18} />
                   </span>
                 </div>
-
-                <span className="absolute left-5 top-5 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-zinc-300 backdrop-blur-md">
-                  Espaço reservado
-                </span>
-
-                <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/30 text-violet-300 backdrop-blur-md transition duration-300 group-hover:bg-violet-600 group-hover:text-white">
-                  <ArrowUpRight size={18} />
-                </span>
-              </div>
-
-              <div className="mt-5 flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-violet-400">
-                    Branding & identidade
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight">
-                    Projeto em breve
-                  </h3>
+                <div className="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-violet-400">
+                      Branding & identidade
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold tracking-tight">
+                      Identidades que deixam marca
+                    </h3>
+                  </div>
+                  <span className="pt-1 text-sm text-zinc-600">01</span>
                 </div>
-                <span className="pt-1 text-sm text-zinc-600">01</span>
-              </div>
+              </a>
             </article>
 
-            {/* Projeto 02 */}
-<article className="scroll-reveal group rounded-2xl transition-all duration-500 ease-out motion-reduce:transition-none hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(139,92,246,0.12)]">              <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111114] transition duration-500 group-hover:border-violet-500/30">
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(139,92,246,0.16),transparent_55%)]"
-                />
-
-                <div
-                  aria-hidden="true"
-                  className="relative w-[62%] rotate-[-5deg] rounded-xl border border-white/10 bg-[#1a1a21] p-4 shadow-2xl transition duration-500 group-hover:rotate-0"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="h-2 w-12 rounded-full bg-violet-400/70" />
-                    <span className="h-2 w-2 rounded-full bg-white/30" />
-                  </div>
-
-                  <div className="mt-5 flex aspect-[5/4] items-end rounded-lg bg-gradient-to-br from-violet-950 via-[#35205c] to-[#15131b] p-3">
-                    <div className="h-2 w-16 rounded-full bg-white/50" />
-                  </div>
-
-                  <div className="mt-4 space-y-2">
-                    <div className="h-2 w-4/5 rounded-full bg-white/20" />
-                    <div className="h-2 w-3/5 rounded-full bg-white/10" />
-                  </div>
+            {/* Projeto 02 — UrbanStyle */}
+            <article className="scroll-reveal group rounded-2xl transition-all duration-500 ease-out motion-reduce:transition-none hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(139,92,246,0.12)]">
+              <a href="/portfolio/desenvolvimento-web" className="block">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111114] transition-colors duration-500 group-hover:border-violet-500/40">
+                  <Image
+                    src="/images/portfolio/desenvolvimento-web/UrbanStyle%20Ecommerce%20Workspace.png"
+                    alt="Projeto UrbanStyle Ecommerce Workspace — desenvolvimento web"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+                  <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-white backdrop-blur-md">
+                    Web design
+                  </span>
+                  <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white backdrop-blur-md transition duration-300 group-hover:bg-violet-600">
+                    <ArrowUpRight size={18} />
+                  </span>
                 </div>
-
-                <span className="absolute left-5 top-5 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-zinc-300 backdrop-blur-md">
-                  Espaço reservado
-                </span>
-
-                <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/30 text-violet-300 backdrop-blur-md transition duration-300 group-hover:bg-violet-600 group-hover:text-white">
-                  <ArrowUpRight size={18} />
-                </span>
-              </div>
-
-              <div className="mt-5 flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-violet-400">
-                    Desenvolvimento web
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-tight">
-                    Projeto em breve
-                  </h3>
+                <div className="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-violet-400">
+                      Desenvolvimento web
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold tracking-tight">
+                      Experiências digitais
+                    </h3>
+                  </div>
+                  <span className="pt-1 text-sm text-zinc-600">02</span>
                 </div>
-                <span className="pt-1 text-sm text-zinc-600">02</span>
-              </div>
+              </a>
             </article>
 
-            {/* Projeto 03 */}
-<article className="scroll-reveal group rounded-2xl transition-all duration-500 ease-out motion-reduce:transition-none hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(139,92,246,0.12)]">
-  <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111114] transition duration-500 group-hover:border-violet-500/30">
-    <div
-      aria-hidden="true"
-      className="absolute inset-0 bg-[radial-gradient(circle_at_25%_70%,rgba(139,92,246,0.15),transparent_55%)]"
-    />
-
-    <div
-      aria-hidden="true"
-      className="relative grid w-[62%] grid-cols-2 gap-3 transition duration-500 group-hover:scale-105"
-    >
-      <div className="flex aspect-[3/4] flex-col justify-between rounded-lg border border-white/10 bg-[#1a1a21] p-3">
-        <span className="text-[9px] uppercase tracking-widest text-violet-300">
-          Design
-        </span>
-
-        <div className="space-y-2">
-          <div className="h-3 w-full rounded-full bg-white/30" />
-          <div className="h-2 w-3/4 rounded-full bg-white/10" />
-        </div>
-      </div>
-
-      <div className="mt-5 flex aspect-[3/4] flex-col justify-end rounded-lg bg-gradient-to-br from-violet-500/40 via-violet-950 to-[#17131f] p-3">
-        <div className="mb-3 h-10 w-10 rounded-full border border-white/30" />
-        <div className="h-2 w-full rounded-full bg-white/40" />
-        <div className="mt-2 h-2 w-2/3 rounded-full bg-white/20" />
-      </div>
-    </div>
-
-    <span className="absolute left-5 top-5 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-zinc-300 backdrop-blur-md">
-      Espaço reservado
-    </span>
-
-    <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/30 text-violet-300 backdrop-blur-md transition duration-300 group-hover:bg-violet-600 group-hover:text-white">
-      <ArrowUpRight size={18} />
-    </span>
-  </div>
-
-  <div className="mt-5 flex items-start justify-between gap-4">
-    <div>
-      <p className="text-xs uppercase tracking-[0.18em] text-violet-400">
-        Conteúdo & redes sociais
-      </p>
-      <h3 className="mt-2 text-xl font-semibold tracking-tight">
-        Projeto em breve
-      </h3>
-    </div>
-
-    <span className="pt-1 text-sm text-zinc-600">03</span>
-  </div>
-</article>
+            {/* Projeto 03 — Nexa Tech */}
+            <article className="scroll-reveal group rounded-2xl transition-all duration-500 ease-out motion-reduce:transition-none hover:-translate-y-1 hover:drop-shadow-[0_16px_32px_rgba(139,92,246,0.12)]">
+              <a href="/portfolio/conteudo-redes-sociais" className="block">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/[0.08] bg-[#111114] transition-colors duration-500 group-hover:border-violet-500/40">
+                  <Image
+                    src="/images/portfolio/conteudo-redes-sociais/Nexa%20Tech.png"
+                    alt="Projeto Nexa Tech — conteúdo e design para redes sociais"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+                  <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-black/40 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] text-white backdrop-blur-md">
+                    Social media
+                  </span>
+                  <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/30 text-white backdrop-blur-md transition duration-300 group-hover:bg-violet-600">
+                    <ArrowUpRight size={18} />
+                  </span>
+                </div>
+                <div className="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-violet-400">
+                      Conteúdo & redes sociais
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold tracking-tight">
+                      Conteúdo que comunica
+                    </h3>
+                  </div>
+                  <span className="pt-1 text-sm text-zinc-600">03</span>
+                </div>
+              </a>
+            </article>
           </div>
 
           <div className="mt-6 border-t border-white/[0.08] pt-5">
@@ -608,14 +579,14 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
       {/* Desenvolvimento Web */}
       <section
         id="desenvolvimento-web"
-        className="relative isolate scroll-mt-24 overflow-hidden border-y border-white/[0.06] px-5 py-20 sm:px-6 sm:py-24 md:px-16 lg:py-32"
+        className="relative isolate scroll-mt-24 overflow-hidden border-y border-white/[0.06] px-5 py-14 sm:px-6 sm:py-16 md:px-16 lg:py-20"
       >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute right-[-10%] top-1/2 -z-10 h-96 w-96 -translate-y-1/2 rounded-full bg-violet-700/[0.12] blur-[120px]"
         />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           {/* Conteúdo */}
           <div className="scroll-reveal">
             <div className="flex items-center gap-3">
@@ -784,7 +755,7 @@ className="scroll-reveal group relative flex h-full min-h-[260px] flex-col overf
 
 
       {/* Processo */}
-      <section id="processo" className="scroll-mt-24 px-5 py-16 sm:px-6 sm:py-20 md:px-16 lg:py-32">
+      <section id="processo" className="scroll-mt-24 px-5 py-12 sm:px-6 sm:py-14 md:px-16 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.25em] text-violet-400">
@@ -880,7 +851,7 @@ className="scroll-reveal group relative rounded-2xl border border-white/[0.08] b
       {/* Contacto */}
       <section
         id="contacto"
-        className="relative isolate scroll-mt-24 overflow-hidden px-5 py-16 sm:px-6 sm:py-20 md:px-16 lg:py-32"
+        className="relative isolate scroll-mt-24 overflow-hidden px-5 py-12 sm:px-6 sm:py-14 md:px-16 lg:py-20"
       >
         <div
           aria-hidden="true"

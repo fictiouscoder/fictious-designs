@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-
 import Link from "next/link";
+import Navigation from "@/app/components/Navigation";
 import {
-  ArrowLeft,
   ArrowUpRight,
   Check,
   Palette,
@@ -112,25 +111,7 @@ export const metadata: Metadata = {
 export default function PackagesPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#09090B] text-white">
-      {/* Navegação */}
-      <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#09090B]/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-10">
-          <Link
-            href="/"
-            className="text-lg font-bold tracking-tight transition hover:text-violet-300"
-          >
-            FICTIOUS<span className="text-violet-500">.</span>
-          </Link>
-
-          <Link
-            href="/#pacotes"
-            className="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
-          >
-            <ArrowLeft size={16} />
-            Voltar ao início
-          </Link>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Introdução */}
       <section className="relative isolate overflow-hidden px-5 pb-16 pt-20 sm:pb-20 sm:pt-28 md:px-10">

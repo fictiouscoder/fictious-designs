@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 
 const serviceOptions: Record<string, string[]> = {
@@ -61,6 +62,15 @@ export default function LeadForm() {
   const [variacaoLogotipo, setVariacaoLogotipo] = useState("Normal");
   const [descricao, setDescricao] = useState("");
   const [continuacao, setContinuacao] = useState(false);
+  const formStartTracked = useRef(false);
+
+function handleFormInteraction() {
+  if (formStartTracked.current) return;
+
+  formStartTracked.current = true;
+
+ sendGAEvent("event", "quote_form_start");
+}
 
   const isLogotipo = tipo === "pontual" && servico === "Logótipo";
 
@@ -80,6 +90,7 @@ export default function LeadForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    sendGAEvent("event", "quote_request_initiated");
 
     const tipoLabel =
       tipo === "pontual"
@@ -128,7 +139,11 @@ export default function LeadForm() {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form
+  onSubmit={handleSubmit}
+  onFocusCapture={handleFormInteraction}
+  className="space-y-5"
+>
         <div className="space-y-2">
           <label
             htmlFor="lead-tipo"

@@ -48,6 +48,7 @@ a {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 :focus-visible {
@@ -55,11 +56,6 @@ a {
   outline-offset: 4px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .ambient-glow-orb {
-    animation: none;
-  }
-}
 h1,
 h2,
 h3,
@@ -68,6 +64,7 @@ h5,
 h6 {
   font-family: var(--font-manrope), sans-serif;
 }
+
 /* ─── Premium animations ─── */
 
 @keyframes heroFadeUp {
@@ -142,17 +139,6 @@ h6 {
   animation: heroGlowPulse 4s ease-in-out infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-enter,
-  [class*="hero-enter-"],
-  .hero-orb-float,
-  .hero-orb-glow {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    will-change: auto;
-  }
-}
 /* ─── Scroll reveal animations ─── */
 
 .scroll-reveal-ready {
@@ -164,22 +150,11 @@ h6 {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-
 .scroll-reveal-ready.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .scroll-reveal-ready,
-  .scroll-reveal-ready.is-visible {
-    opacity: 1;
-    transform: none;
-    transition: none;
-    transition-delay: 0ms;
-    will-change: auto;
-  }
-}
 /* ─── Ambient Violet Glow ─── */
 
 .ambient-glow {
@@ -261,20 +236,8 @@ h6 {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .ambient-glow-orb {
-    animation: none;
-  }
-}
 /* ─── Fictious Designs: visual polish ─── */
 
-/* Transições consistentes */
-a,
-button {
-  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* Cartões: serviços, pacotes e processo */
 #servicos article,
 #solucoes article,
 #pacotes article,
@@ -310,22 +273,162 @@ button {
   }
 }
 
-/* Foco acessível */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-}
+/* ─── Accessible reduced motion ─── */
 
-/* Movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ambient-glow-orb,
+  .hero-enter,
+  [class*="hero-enter-"],
+  .hero-orb-float,
+  .hero-orb-glow {
+    animation: none !important;
+  }
+
+  .hero-enter,
+  [class*="hero-enter-"] {
+    opacity: 1 !important;
+  }
+
+  .hero-orb-float,
+  .hero-orb-glow {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .scroll-reveal-ready,
+  .scroll-reveal-ready.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+    will-change: auto;
+  }
+
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     transition-delay: 0ms !important;
+  }
+}
+/* Infinite logo marquee */
+.logo-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  background: #09090b;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.logo-marquee::before,
+.logo-marquee::after {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: clamp(2rem, 8vw, 7rem);
+  content: "";
+  pointer-events: none;
+}
+
+.logo-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #09090b, transparent);
+}
+
+.logo-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #09090b, transparent);
+}
+
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: logo-marquee-scroll 42s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4.5rem);
+  padding-right: clamp(2rem, 4vw, 4.5rem);
+}
+
+.logo-marquee-item {
+  display: flex;
+  width: 120px;
+  height: 66px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-marquee-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0) invert(1);
+  opacity: 0.65;
+  transition: opacity 250ms ease;
+}
+
+.logo-marquee-item:hover .logo-marquee-image {
+  opacity: 1;
+}
+
+@keyframes logo-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-item {
+  width: 100px;
+  height: 56px;
+}
+
+@media (min-width: 640px) {
+  .logo-marquee-item {
+    width: 112px;
+    height: 64px;
+  }
+
+  .logo-marquee-group {
+    gap: 1.75rem;
+    padding-right: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none;
+    will-change: auto;
+  }
+
+  .logo-marquee-group-copy {
+    display: none;
+  }
+
+  .logo-marquee {
+    overflow-x: auto;
+  }
+
+  .logo-marquee-image {
+    transition: none;
   }
 }

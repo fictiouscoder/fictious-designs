@@ -1,5 +1,6 @@
 ﻿import type { ReactNode } from "react";
 import Link from "next/link";
+import Navigation from "./Navigation";
 import Footer from "./Footer";
 
 type PolicyLayoutProps = {
@@ -14,8 +15,10 @@ export default function PolicyLayout({
   children,
 }: PolicyLayoutProps) {
   return (
-    <>
-      <main className="flex-1 px-5 py-16 sm:px-8 sm:py-20 lg:px-16">
+  <>
+    <Navigation />
+
+    <main className="flex-1 px-5 py-16 sm:px-8 sm:py-20 lg:px-16">
         <div className="mx-auto max-w-4xl">
           <Link
             href="/"

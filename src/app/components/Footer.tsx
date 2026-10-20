@@ -4,7 +4,7 @@ import Link from "next/link";
 const exploreLinks = [
   { label: "Serviços", href: "/desenvolvimento-web" },
   { label: "Pacotes", href: "/pacotes" },
-  { label: "Contacto", href: "/#contacto" },
+  { label: "Contacto", href: "/contactos" },
 ];
 
 const legalLinks = [
