@@ -100,7 +100,7 @@ function handleFormInteraction() {
           : "Preciso de orientação";
 
     const mensagem = [
-      "Olá, Fictious Designs! Gostaria de solicitar um orçamento.",
+      "Olá, Fictious Media! Gostaria de solicitar um orçamento.",
       "",
       `Tipo de pedido: ${tipoLabel}`,
       `Serviço: ${servico}`,

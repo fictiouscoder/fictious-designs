@@ -28,16 +28,16 @@ export default function Navigation() {
         <Link
           href="/"
           onClick={closeMenu}
-          aria-label="Fictious Designs — página inicial"
+          aria-label="Fictious Media — página inicial"
           className="flex shrink-0 items-center"
         >
           <Image
-            src="/FD%20LOGO%20%20Branco.png"
-            alt="Fictious Designs"
+            src="/fictious-media-logo.png"
+            alt="Fictious Media"
             width={240}
             height={100}
             priority
-            className="h-[56px] w-auto max-w-[100px] object-contain sm:h-[54px] sm:max-w-[150px] lg:h-[150px] lg:max-w-[290px]"
+            className="h-[48px] w-auto max-w-[140px] object-contain sm:max-w-[170px] lg:h-[84px] lg:max-w-[340px]"
           />
         </Link>
 

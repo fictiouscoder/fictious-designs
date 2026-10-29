@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "@/app/components/Navigation";
 import ScrollReveal from "@/app/components/ScrollReveal";
+import WebCodeAtmosphere from "@/app/components/service/WebCodeAtmosphere";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   },
 
   title: "Desenvolvimento Web em Moçambique",
-  description: "Criamos websites modernos, responsivos e estratégicos para empresas e marcas em Moçambique. Descobre as soluções de desenvolvimento web da Fictious Designs.",
+  description: "Criamos websites modernos, responsivos e estratégicos para empresas e marcas em Moçambique. Descobre as soluções de desenvolvimento web da Fictious Media.",
 };
 export default function DesenvolvimentoWebPage() {
   return (
@@ -29,14 +30,14 @@ export default function DesenvolvimentoWebPage() {
       <ScrollReveal />
       <Navigation />
 
-      {/* Background */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 -z-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet-700/[0.12] blur-[150px]"
-      />
+      {/* Background interactivo */}
+<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+  <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-violet-700/[0.12] blur-[150px]" />
+  <WebCodeAtmosphere />
+</div>
 
       {/* Hero */}
-      <section className="relative px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-16 lg:pb-24 lg:pt-36">
+      <section className="relative z-10 px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-16 lg:pb-24 lg:pt-36">
         <div className="mx-auto max-w-7xl">
           <div className="scroll-reveal max-w-4xl">
             <div className="flex items-center gap-3">
@@ -149,9 +150,9 @@ export default function DesenvolvimentoWebPage() {
                 description:
                   "Apresenta a tua empresa, os teus serviços e os teus valores através de uma presença digital profissional.",
                 features: [
-                  "Apresentação da marca",
-                  "Serviços e contactos",
-                  "Design responsivo",
+                  "Apresentação da marca;",
+                  "Serviços e contactos;",
+                  "Design responsivo.",
                 ],
               },
               {
@@ -161,9 +162,9 @@ export default function DesenvolvimentoWebPage() {
                 description:
                   "Páginas focadas numa campanha, produto ou serviço, com uma estrutura pensada para orientar o visitante.",
                 features: [
-                  "Mensagem estratégica",
-                  "Chamadas à ação",
-                  "Estrutura objetiva",
+                  "Mensagem estratégica;",
+                  "Chamadas à ação;",
+                  "Estrutura objetiva.",
                 ],
               },
               {
@@ -173,9 +174,9 @@ export default function DesenvolvimentoWebPage() {
                 description:
                   "Uma experiência de compra digital organizada para apresentar produtos e facilitar a jornada do cliente.",
                 features: [
-                  "Catálogo de produtos",
-                  "Experiência de compra",
-                  "Estrutura adaptável",
+                  "Catálogo de produtos;",
+                  "Experiência de compra;",
+                  "Estrutura adaptável.",
                 ],
               },
             ].map((service) => (
@@ -224,6 +225,167 @@ export default function DesenvolvimentoWebPage() {
         </div>
       </section>
 
+      {/* Preços de desenvolvimento web */}
+      <section
+        id="precos"
+        className="relative overflow-hidden border-t border-white/[0.06] px-5 py-20 sm:px-8 sm:py-28 lg:px-16"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/3 top-1/4 h-80 w-80 rounded-full bg-violet-700/[0.10] blur-[130px]"
+        />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="scroll-reveal mx-auto max-w-3xl text-center">
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-8 bg-violet-500" />
+              <p className="text-xs font-medium uppercase tracking-[0.25em] text-violet-300 sm:text-sm">
+                Investimento
+              </p>
+              <span className="h-px w-8 bg-violet-500" />
+            </div>
+
+            <h2 className="mt-6 text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl md:text-5xl">
+              O próximo passo da tua marca começa{" "}
+              <span className="text-violet-400">online.</span>
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-zinc-400 sm:text-base">
+              Soluções web pensadas para diferentes objectivos, com design
+              personalizado, experiência responsiva e espaço para crescer.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+            {[
+              {
+                number: "01",
+                title: "Landing Page",
+                price: "8.000 MT",
+                description:
+                  "Uma página estratégica para apresentar um serviço, promover uma oferta ou captar contactos.",
+                features: [
+                  "Uma página com até 6 secções principais",
+                  "Design personalizado e responsivo",
+                  "Botões de contacto e WhatsApp",
+                  "Optimização SEO básica",
+                  "Formulário de contacto, quando aplicável",
+                ],
+                featured: false,
+              },
+              {
+                number: "02",
+                title: "Website Institucional",
+                price: "18.000 MT",
+                description:
+                  "Uma presença digital profissional para apresentar a empresa, os serviços e reforçar a credibilidade da marca.",
+                features: [
+                  "Até 5 páginas",
+                  "Design personalizado e responsivo",
+                  "Apresentação de serviços e empresa",
+                  "Formulário e integração com WhatsApp",
+                  "Optimização SEO básica",
+                ],
+                featured: true,
+              },
+              {
+                number: "03",
+                title: "Loja Online",
+                price: "35.000 MT",
+                description:
+                  "Uma plataforma para apresentar produtos e organizar o processo de encomenda ou compra.",
+                features: [
+                  "Catálogo e páginas de produtos",
+                  "Carrinho e fluxo de encomenda",
+                  "Design personalizado e responsivo",
+                  "Integração com WhatsApp, quando aplicável",
+                  "Testes do processo de compra",
+                ],
+                featured: false,
+              },
+            ].map((plan) => (
+              <article
+                key={plan.number}
+                className={`scroll-reveal relative flex flex-col rounded-2xl border p-6 transition duration-300 hover:-translate-y-1 sm:p-8 ${
+                  plan.featured
+                    ? "border-violet-400/40 bg-violet-500/[0.08] shadow-[0_0_60px_rgba(139,92,246,0.08)]"
+                    : "border-white/[0.09] bg-white/[0.02] hover:border-violet-400/30"
+                }`}
+              >
+                {plan.featured && (
+                  <span className="mb-5 w-fit rounded-full border border-violet-400/30 bg-violet-400/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-violet-300">
+                    Mais versátil
+                  </span>
+                )}
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+                    {plan.number} / Solução
+                  </span>
+                  <span className="h-2 w-2 rounded-full bg-violet-400" />
+                </div>
+
+                <h3 className="mt-6 text-xl font-semibold tracking-tight">
+                  {plan.title}
+                </h3>
+
+                <p className="mt-3 min-h-20 text-sm leading-6 text-zinc-400">
+                  {plan.description}
+                </p>
+
+                <div className="mt-6 border-b border-white/[0.08] pb-6">
+                  <p className="text-xs text-zinc-500">Investimento inicial</p>
+                  <p className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+                    {plan.price}
+                  </p>
+                  <p className="mt-2 text-xs text-zinc-500">
+                    Preço desde
+                  </p>
+                </div>
+
+                <ul className="mt-6 flex-1 space-y-4">
+                  {plan.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-sm leading-6 text-zinc-300"
+                    >
+                      <Check
+                        size={16}
+                        className="mt-1 shrink-0 text-violet-400"
+                      />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={`https://wa.me/258861846870?text=${encodeURIComponent(
+                    `Olá, Fictious Media! Gostaria de solicitar um orçamento para ${plan.title}.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-medium transition duration-300 ${
+                    plan.featured
+                      ? "bg-violet-500 text-white hover:bg-violet-400"
+                      : "border border-white/10 text-white hover:border-violet-400/40 hover:bg-violet-500/[0.08]"
+                  }`}
+                >
+                  Solicitar orçamento
+                  <ArrowUpRight size={16} />
+                </a>
+              </article>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-6 text-zinc-500">
+            Os valores são indicativos e podem variar conforme o âmbito do
+            projecto. Domínio, alojamento, integrações de pagamento, serviços
+            externos e funcionalidades adicionais são orçamentados à parte,
+            quando aplicável. O orçamento final será confirmado antes do início
+            do desenvolvimento.
+          </p>
+        </div>
+      </section>
             {/* Tecnologias e funcionalidades */}
       <section
         id="tecnologias"
@@ -429,7 +591,7 @@ export default function DesenvolvimentoWebPage() {
                   href="/"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.10] px-7 py-4 text-sm font-medium text-zinc-300 transition duration-300 hover:border-violet-400/30 hover:text-white"
                 >
-                  Conhecer a Fictious Designs
+                  Conhecer a Fictious Media
                   <ArrowRight size={17} />
                 </Link>
               </div>
@@ -568,7 +730,7 @@ export default function DesenvolvimentoWebPage() {
       <footer className="border-t border-white/[0.08] px-5 py-7 sm:px-8 lg:px-16">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} Fictious Designs®. Todos os direitos
+            © {new Date().getFullYear()} Fictious Media®. Todos os direitos
             reservados.
           </p>
 
@@ -583,3 +745,7 @@ export default function DesenvolvimentoWebPage() {
     </main>
   );
 }
+
+
+
+

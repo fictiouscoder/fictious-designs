@@ -12,7 +12,7 @@ export default function NotFound() {
 
         <div className="relative">
           <p className="text-sm font-medium uppercase tracking-[0.3em] text-violet-400">
-            Fictious Designs
+            Fictious Media
           </p>
 
           <p className="mt-8 text-8xl font-semibold tracking-tighter text-violet-400 sm:text-9xl">

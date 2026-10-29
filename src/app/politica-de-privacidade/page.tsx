@@ -2,7 +2,7 @@ import PolicyLayout from "../components/PolicyLayout";
 
 export const metadata: import("next").Metadata = {
   title: "Politica de Privacidade",
-  description: "Conhece como a Fictious Designs trata e protege os dados partilhados durante a utilizacao do website.",
+  description: "Conhece como a Fictious Media trata e protege os dados partilhados durante a utilizacao do website.",
   alternates: {
     canonical: "/politica-de-privacidade",
   },
@@ -11,7 +11,7 @@ const sections = [
   {
     title: "1. Introdução",
     content: [
-      "A Fictious Designs® respeita a privacidade dos visitantes do seu website e procura tratar os dados pessoais de forma responsável, transparente e limitada ao necessário para as finalidades descritas nesta política.",
+      "A Fictious Media® respeita a privacidade dos visitantes do seu website e procura tratar os dados pessoais de forma responsável, transparente e limitada ao necessário para as finalidades descritas nesta política.",
       "Esta política explica que informações poderão ser tratadas quando navegas no website ou entras em contacto connosco.",
     ],
   },
@@ -52,7 +52,7 @@ const sections = [
   {
     title: "7. Os teus direitos e pedidos",
     content: [
-      "Se pretenderes esclarecer dúvidas sobre os teus dados, solicitar informações sobre o seu tratamento ou apresentar um pedido relacionado com a tua privacidade, podes entrar em contacto com a Fictious Designs® através dos canais de contacto disponibilizados no website.",
+      "Se pretenderes esclarecer dúvidas sobre os teus dados, solicitar informações sobre o seu tratamento ou apresentar um pedido relacionado com a tua privacidade, podes entrar em contacto com a Fictious Media® através dos canais de contacto disponibilizados no website.",
       "Os pedidos serão analisados de acordo com as circunstâncias e a legislação aplicável.",
     ],
   },
@@ -68,7 +68,7 @@ export default function PoliticaDePrivacidadePage() {
   return (
     <PolicyLayout
       title="Política de Privacidade"
-      description="Como tratamos e protegemos as informações partilhadas durante a tua interação com a Fictious Designs®."
+      description="Como tratamos e protegemos as informações partilhadas durante a tua interação com a Fictious Media®."
     >
       <div className="space-y-10">
         {sections.map((section) => (

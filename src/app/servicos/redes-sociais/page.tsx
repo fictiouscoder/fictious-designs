@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import SocialMediaExperience from "@/app/components/service/SocialMediaExperience";
 import { getServiceBySlug } from "@/data/services";
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "/servicos/redes-sociais",
     type: "website",
     locale: "pt_MZ",
-    siteName: "Fictious Designs",
+    siteName: "Fictious Media",
   },
   twitter: {
     card: "summary_large_image",
@@ -38,7 +38,7 @@ const structuredData = [
     url: "https://fictious-designs.vercel.app/servicos/redes-sociais",
     provider: {
       "@type": "Organization",
-      name: "Fictious Designs",
+      name: "Fictious Media",
       url: "https://fictious-designs.vercel.app",
     },
     areaServed: {

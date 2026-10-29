@@ -83,18 +83,18 @@ const packages = [
 function createWhatsAppLink(packageName: string) {
   const messages: Record<string, string> = {
     Essence:
-      "Olá, Fictious Designs! Tenho interesse no pacote Essence. Gostaria de saber mais sobre os serviços incluídos e como posso avançar.",
+      "Olá, Fictious Media! Tenho interesse no pacote Essence. Gostaria de saber mais sobre os serviços incluídos e como posso avançar.",
 
     Momentum:
-      "Olá, Fictious Designs! Tenho interesse no pacote Momentum. Gostaria de conhecer melhor os serviços incluídos e os próximos passos para contratar.",
+      "Olá, Fictious Media! Tenho interesse no pacote Momentum. Gostaria de conhecer melhor os serviços incluídos e os próximos passos para contratar.",
 
     Pinnacle:
-      "Olá, Fictious Designs! Tenho interesse no pacote Pinnacle e gostaria de apresentar as necessidades do meu projeto para receber uma proposta personalizada.",
+      "Olá, Fictious Media! Tenho interesse no pacote Pinnacle e gostaria de apresentar as necessidades do meu projeto para receber uma proposta personalizada.",
   };
 
   const message =
     messages[packageName] ??
-    `Olá, Fictious Designs! Gostaria de saber mais sobre o pacote ${packageName}.`;
+    `Olá, Fictious Media! Gostaria de saber mais sobre o pacote ${packageName}.`;
 
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
@@ -106,7 +106,7 @@ export const metadata: Metadata = {
   },
 
   title: "Pacotes de Serviços Digitais",
-  description: "Conhece os pacotes de serviços digitais da Fictious Designs e encontra soluções para reforçar a identidade visual e a presença online da tua marca.",
+  description: "Conhece os pacotes de serviços digitais da Fictious Media e encontra soluções para reforçar a identidade visual e a presença online da tua marca.",
 };
 export default function PackagesPage() {
   return (
@@ -309,7 +309,7 @@ export default function PackagesPage() {
             FICTIOUS<span className="text-violet-500">.</span>
           </Link>
           <p>
-            © {new Date().getFullYear()} Fictious Designs. Design com intenção.
+            © {new Date().getFullYear()} Fictious Media. Design com intenção.
           </p>
           <Link href="/#contacto" className="w-fit transition hover:text-white">
             Contacto <span aria-hidden="true">↗</span>

@@ -59,6 +59,7 @@ const contentCards = [
 
 export default function SocialMediaExperience() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
+  const [expandedPlan, setExpandedPlan] = useState<string | null>(null);
   const reduceMotion = useReducedMotion();
 
   const reveal = {
@@ -459,7 +460,218 @@ export default function SocialMediaExperience() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <section id="pacotes-redes" className="overflow-hidden border-y border-white/[0.07] bg-[#0D0D10] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <motion.div {...reveal} className="mb-12 max-w-3xl">
+            <p className="mb-5 text-xs uppercase tracking-[0.24em] text-[#A996FF]">
+              Investimento mensal
+            </p>
+            <h2 className="text-3xl font-medium leading-tight tracking-[-0.04em] sm:text-5xl">
+              Consistência para crescer. Estratégia para avançar.
+            </h2>
+            <p className="mt-5 max-w-2xl leading-7 text-white/55">
+              Escolhe o nível de acompanhamento que faz sentido para a tua marca.
+              Três planos, com diferentes níveis de conteúdo e acompanhamento.
+            </p>
+            <div className="mt-6 flex items-center gap-3 text-sm text-white/45">
+              <span className="h-px w-8 bg-[#7C5CFF]" />
+              Planos mensais  até 3 redes sociais
+            </div>
+          </motion.div>
+
+          <div className="grid items-stretch gap-4 lg:grid-cols-3">
+            {[
+              {
+                name: "Essencial",
+                number: "01",
+                price: "6.000",
+                description: "Ideal para pequenos negócios que pretendem construir uma presença digital profissional.",
+                scope: "1 rede social  30 dias",
+                features: [
+                  "8 publicações mensais para feed, com design gráfico e copywriting",
+                  "Até 4 Stories por mês",
+                  "Planeamento mensal e calendário de publicações",
+                  "Legendas, chamadas para acção (CTA), hashtags e palavras-chave",
+                  "Organização e agendamento de conteúdos",
+                  "Optimização básica da biografia, informações e apresentação visual do perfil",
+                  "Relatório mensal simplificado de desempenho",
+                  "1 ronda de revisões por publicação",
+                ],
+                featured: false,
+              },
+              {
+                name: "Momentum",
+                number: "02",
+                price: "12.000",
+                description: "Para marcas que procuram consistência, maior alcance e crescimento da sua presença digital.",
+                scope: "Até 2 redes sociais  30 dias",
+                features: [
+                  "12 publicações mensais, adaptadas às plataformas seleccionadas",
+                  "Até 8 Stories por mês",
+                  "Edição de até 2 vídeos curtos/Reels por mês, com material fornecido pelo cliente",
+                  "Estratégia mensal de conteúdo alinhada com os objectivos do negócio",
+                  "Pesquisa de concorrentes e referências do sector",
+                  "Copywriting estratégico orientado para interacções, contactos e vendas",
+                  "Agendamento e publicação nas plataformas seleccionadas",
+                  "Gestão básica de comentários e mensagens, até 20 minutos por dia útil",
+                  "Monitorização de alcance, interacções e crescimento",
+                  "Relatório mensal com recomendações de melhoria",
+                  "2 rondas de revisões por publicação",
+                ],
+                featured: true,
+              },
+              {
+                name: "Pinnacle",
+                number: "03",
+                price: "18.000",
+                description: "Para empresas que precisam de uma presença digital mais forte, estratégica e orientada para resultados.",
+                scope: "Até 3 redes sociais  30 dias",
+                audience: "Indicado para empresas estabelecidas, hotéis, restaurantes de maior dimensão, marcas de moda e negócios com necessidades digitais abrangentes.",
+                features: [
+                  "25 publicações mensais, adaptadas às plataformas seleccionadas",
+                  "Até 12 Stories por mês",
+                  "Edição de até 4 vídeos curtos/Reels por mês",
+                  "Estratégia de conteúdo e calendário editorial detalhado",
+                  "Planeamento de campanhas promocionais e comerciais",
+                  "Conteúdos para reconhecimento da marca, envolvimento e conversão",
+                  "Gestão básica de comentários e mensagens, até 45 minutos por dia útil",
+                  "Análise mensal de concorrentes e oportunidades de conteúdo",
+                  "Monitorização de métricas e recomendações estratégicas",
+                  "Reunião mensal de acompanhamento, até 45 minutos",
+                  "Relatório mensal detalhado com indicadores de desempenho",
+                  "Apoio na preparação de lançamentos, promoções e datas comerciais",
+                  "2 rondas de revisões por publicação",
+                ],
+                featured: false,
+              },
+            ].map((plan, index) => {
+              const isExpanded = expandedPlan === plan.name;
+
+              return (
+                <motion.article
+                  key={plan.name}
+                  {...reveal}
+                  transition={{
+                    duration: reduceMotion ? 0 : 0.5,
+                    delay: reduceMotion ? 0 : index * 0.08,
+                    ease,
+                  }}
+                  className={`relative flex h-full flex-col overflow-hidden rounded-2xl border p-5 transition-colors sm:p-6 ${
+                    plan.featured
+                      ? "border-[#7C5CFF]/60 bg-[#7C5CFF]/[0.09] shadow-[0_0_40px_rgba(124,92,255,0.08)]"
+                      : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                  }`}
+                >
+                  {plan.featured && (
+                    <div className="mb-5 w-fit rounded-full border border-[#A996FF]/30 bg-[#7C5CFF]/15 px-3 py-1 text-[10px] uppercase tracking-[0.16em] text-[#C4B5FD]">
+                      Recomendado
+                    </div>
+                  )}
+
+                  <p className="mb-3 text-xs tracking-[0.2em] text-white/35">
+                    {plan.number} / PLANO
+                  </p>
+                  <h3 className="text-2xl font-medium tracking-[-0.03em]">
+                    {plan.name}
+                  </h3>
+                  <p className="mt-2 min-h-12 text-sm leading-6 text-white/50">
+                    {plan.description}
+                  </p>
+                  <p className="mt-4 text-xs uppercase tracking-[0.12em] text-white/45">
+                    {plan.scope}
+                  </p>
+
+                  <div className="mt-6">
+                    <p className="text-3xl font-medium tracking-[-0.05em]">
+                      {plan.price}
+                      <span className="ml-1 text-sm font-normal tracking-normal text-white/50">
+                        MT
+                      </span>
+                    </p>
+                    <p className="mt-1 text-xs text-white/40">por mês</p>
+                  </div>
+
+                  <div className="my-6 h-px bg-white/[0.08]" />
+
+                  <ul className="space-y-3">
+                    {plan.features.slice(0, 4).map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-2.5 text-sm leading-6 text-white/65"
+                      >
+                        <Check size={16} className="mt-1 shrink-0 text-[#A996FF]" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {isExpanded && (
+                    <div className="mt-4 border-t border-white/10 pt-4">
+                      <p className="mb-3 text-xs uppercase tracking-[0.16em] text-white/40">
+                        Incluído neste plano
+                      </p>
+                      <ul className="space-y-3">
+                        {plan.features.slice(4).map((feature) => (
+                          <li
+                            key={feature}
+                            className="flex items-start gap-2.5 text-sm leading-6 text-white/65"
+                          >
+                            <Check size={16} className="mt-1 shrink-0 text-[#A996FF]" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {"audience" in plan && (
+                        <p className="mt-5 text-xs leading-6 text-white/45">
+                          {plan.audience}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  <button
+                    type="button"
+                    aria-expanded={isExpanded}
+                    onClick={() => setExpandedPlan(isExpanded ? null : plan.name)}
+                    className="mt-5 inline-flex items-center gap-2 self-start text-sm text-[#C4B5FD] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A996FF]"
+                  >
+                    {isExpanded ? "Mostrar menos" : "Ver todos os benefícios"}
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  <div className="mt-auto pt-7">
+                    <Link
+                      href="/contactos"
+                      className={`group inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm transition ${
+                        plan.featured
+                          ? "bg-[#7C5CFF] text-white hover:bg-[#8D73FF]"
+                          : "border border-white/15 text-white/80 hover:border-[#A996FF]/50 hover:text-white"
+                      }`}
+                    >
+                      Escolher {plan.name}
+                      <ArrowUpRight
+                        size={16}
+                        className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      />
+                    </Link>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+
+          <p className="mt-8 max-w-4xl text-xs leading-6 text-white/35">
+            O número de redes sociais, publicações, Stories e revisões varia conforme
+            o plano contratado. A edição de vídeos curtos/Reels pressupõe material
+            fornecido pelo cliente. Os conteúdos são adaptados às plataformas
+            seleccionadas e o âmbito do serviço é alinhado com os objectivos do negócio.
+          </p>
+        </div>
+      </section>
+<section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
           <motion.div {...reveal}>
             <p className="mb-5 text-xs uppercase tracking-[0.24em] text-[#A996FF]">
@@ -611,4 +823,7 @@ export default function SocialMediaExperience() {
     </main>
   );
 }
+
+
+
 

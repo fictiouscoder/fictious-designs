@@ -2,7 +2,7 @@ import PolicyLayout from "../components/PolicyLayout";
 
 export const metadata: import("next").Metadata = {
   title: "Politica de Servicos",
-  description: "Consulta as condicoes gerais, os prazos e as responsabilidades associados aos servicos da Fictious Designs.",
+  description: "Consulta as condicoes gerais, os prazos e as responsabilidades associados aos servicos da Fictious Media.",
   alternates: {
     canonical: "/politica-de-servicos",
   },
@@ -11,7 +11,7 @@ const sections = [
   {
     title: "1. Âmbito dos serviços",
     paragraphs: [
-      "A Fictious Designs® presta serviços de design, desenvolvimento web e soluções digitais de acordo com as necessidades e os requisitos definidos com cada cliente.",
+      "A Fictious Media® presta serviços de design, desenvolvimento web e soluções digitais de acordo com as necessidades e os requisitos definidos com cada cliente.",
       "As entregas, funcionalidades e atividades incluídas serão descritas na proposta comercial ou no acordo específico do projeto.",
     ],
   },
@@ -61,7 +61,7 @@ const sections = [
     title: "8. Contacto e condições específicas",
     paragraphs: [
       "As condições particulares de cada serviço prevalecem na definição do âmbito, das entregas, dos prazos e das responsabilidades acordadas, respeitando a legislação aplicável.",
-      "Para esclarecimentos sobre um serviço ou projeto, utiliza os canais de contacto disponibilizados pela Fictious Designs® no website.",
+      "Para esclarecimentos sobre um serviço ou projeto, utiliza os canais de contacto disponibilizados pela Fictious Media® no website.",
     ],
   },
 ];
@@ -70,7 +70,7 @@ export default function PoliticaDeServicosPage() {
   return (
     <PolicyLayout
       title="Política de Prestação de Serviços"
-      description="Orientações sobre a execução, as entregas, as revisões e o acompanhamento dos serviços da Fictious Designs®."
+      description="Orientações sobre a execução, as entregas, as revisões e o acompanhamento dos serviços da Fictious Media®."
     >
       <div className="space-y-10">
         {sections.map((section) => (

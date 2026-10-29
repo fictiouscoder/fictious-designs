@@ -2,7 +2,7 @@ import PolicyLayout from "../components/PolicyLayout";
 
 export const metadata: import("next").Metadata = {
   title: "Termos e Condicoes",
-  description: "Consulta os termos de utilizacao do website e as condicoes gerais dos servicos da Fictious Designs.",
+  description: "Consulta os termos de utilizacao do website e as condicoes gerais dos servicos da Fictious Media.",
   alternates: {
     canonical: "/termos-e-condicoes",
   },
@@ -11,14 +11,14 @@ const sections = [
   {
     title: "1. Âmbito",
     paragraphs: [
-      "Estes Termos e Condições estabelecem orientações gerais para a utilização do website da Fictious Designs® e para a contratação dos serviços apresentados.",
+      "Estes Termos e Condições estabelecem orientações gerais para a utilização do website da Fictious Media® e para a contratação dos serviços apresentados.",
       "As condições específicas de cada projeto, incluindo o âmbito, o preço, os prazos e as entregas, serão definidas na proposta comercial ou no acordo celebrado com o cliente.",
     ],
   },
   {
     title: "2. Serviços",
     paragraphs: [
-      "A Fictious Designs® disponibiliza serviços de design, desenvolvimento web e outras soluções digitais divulgadas nos seus canais oficiais.",
+      "A Fictious Media® disponibiliza serviços de design, desenvolvimento web e outras soluções digitais divulgadas nos seus canais oficiais.",
       "A disponibilidade, as características e o âmbito de cada serviço dependem da proposta apresentada e dos requisitos acordados para o projeto.",
     ],
   },
@@ -46,7 +46,7 @@ const sections = [
   {
     title: "6. Propriedade intelectual",
     paragraphs: [
-      "A utilização, a entrega e a titularidade dos materiais produzidos no âmbito de um projeto deverão respeitar o acordo celebrado entre a Fictious Designs® e o cliente, bem como os direitos de terceiros sobre ferramentas, fontes, imagens, software ou outros recursos utilizados.",
+      "A utilização, a entrega e a titularidade dos materiais produzidos no âmbito de um projeto deverão respeitar o acordo celebrado entre a Fictious Media® e o cliente, bem como os direitos de terceiros sobre ferramentas, fontes, imagens, software ou outros recursos utilizados.",
       "O cliente é responsável por assegurar que tem autorização para fornecer materiais de terceiros destinados ao projeto.",
     ],
   },
@@ -70,7 +70,7 @@ export default function TermosECondicoesPage() {
   return (
     <PolicyLayout
       title="Termos e Condições"
-      description="Condições gerais de utilização do website e de contratação dos serviços da Fictious Designs®."
+      description="Condições gerais de utilização do website e de contratação dos serviços da Fictious Media®."
     >
       <div className="space-y-10">
         {sections.map((section) => (

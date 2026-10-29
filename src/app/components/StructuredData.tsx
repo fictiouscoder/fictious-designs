@@ -2,7 +2,7 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Fictious Designs",
+    name: "Fictious Media",
     url: "https://fictious-designs.vercel.app",
     description:
       "Servicos de design, branding, desenvolvimento web e presenca digital para marcas e empresas.",
@@ -17,12 +17,12 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Fictious Designs",
+    name: "Fictious Media",
     url: "https://fictious-designs.vercel.app",
     inLanguage: "pt",
     publisher: {
       "@type": "Organization",
-      name: "Fictious Designs",
+      name: "Fictious Media",
       url: "https://fictious-designs.vercel.app",
     },
   },

@@ -112,7 +112,7 @@ description:
   },
 ],
     seo: {
-  title: "Branding e Identidade Visual | Fictious Designs",
+  title: "Branding e Identidade Visual",
   description:
     "Desenvolvemos identidades visuais estratégicas, logótipos e sistemas gráficos que distinguem a tua marca, comunicam os seus valores e reforçam a sua presença profissional.",
 },
@@ -173,7 +173,7 @@ description:
       "Sim. O plano pode incluir design de publicações, legendas, planeamento editorial e preparação de conteúdos, com quantidades e formatos definidos na proposta.",
   },
   {
-    question: "A Fictious Designs também produz fotografias e vídeos?",
+    question: "A Fictious Media também produz fotografias e vídeos?",
     answer:
       "Podemos avaliar as necessidades de fotografia e vídeo para o teu negócio. A produção, gravação e edição devem ser confirmadas na proposta.",
   },
@@ -204,7 +204,7 @@ description:
   },
 ],
    seo: {
-  title: "Gestão de Redes Sociais | Fictious Designs",
+  title: "Gestão de Redes Sociais",
   description:
     "Planeamos e gerimos conteúdos para redes sociais, combinando estratégia, design e copywriting para fortalecer a presença digital da tua marca e comunicar com o público certo.",
 },
@@ -287,11 +287,11 @@ description:
   {
     question: "Como posso solicitar uma proposta?",
     answer:
-      "Entra em contacto com a Fictious Designs e explica-nos o teu negócio, os objectivos que pretendes alcançar e os canais que utilizas. Com essas informações, podemos avaliar as necessidades e preparar uma proposta adequada.",
+      "Entra em contacto com a Fictious Media e explica-nos o teu negócio, os objectivos que pretendes alcançar e os canais que utilizas. Com essas informações, podemos avaliar as necessidades e preparar uma proposta adequada.",
   },
 ],
     seo: {
-  title: "Marketing Digital e Publicidade | Fictious Designs",
+  title: "Marketing Digital e Publicidade",
   description:
     "Planeamos campanhas de marketing digital, criamos anúncios e acompanhamos indicadores de desempenho para ajudar a tua marca a alcançar o público certo e aproveitar melhor o investimento publicitário.",
 },
@@ -374,11 +374,11 @@ description:
   {
     question: "Como posso contratar este serviço?",
     answer:
-      "Entra em contacto com a Fictious Designs e partilha os objectivos da tua marca, os canais que utilizas e os desafios de comunicação que pretendes resolver. Com base nessas informações, podemos preparar uma proposta adequada.",
+      "Entra em contacto com a Fictious Media e partilha os objectivos da tua marca, os canais que utilizas e os desafios de comunicação que pretendes resolver. Com base nessas informações, podemos preparar uma proposta adequada.",
   },
 ],
     seo: {
-  title: "Estratégia de Conteúdo e Copywriting | Fictious Designs",
+  title: "Estratégia de Conteúdo e Copywriting",
   description:
     "Criamos estratégias de conteúdo, planeamento editorial e textos para comunicação digital, ajudando a tua marca a transmitir mensagens consistentes, relevantes e alinhadas com os seus objectivos.",
 },
@@ -466,11 +466,11 @@ description:
   {
     question: "Como posso contratar o serviço?",
     answer:
-      "Entra em contacto com a Fictious Designs e partilha a localização, a actividade e os objectivos do teu negócio. Avaliamos a presença local existente e identificamos as prioridades para uma proposta adequada.",
+      "Entra em contacto com a Fictious Media e partilha a localização, a actividade e os objectivos do teu negócio. Avaliamos a presença local existente e identificamos as prioridades para uma proposta adequada.",
   },
 ],
   seo: {
-  title: "SEO Local e Google Maps | Fictious Designs",
+  title: "SEO Local e Google Maps",
   description:
     "Melhora a presença local do teu negócio com serviços de SEO Local e optimização do Google Maps. Ajudamos a tua marca a fortalecer a visibilidade nas pesquisas locais e a facilitar a descoberta dos teus produtos ou serviços.",
 },

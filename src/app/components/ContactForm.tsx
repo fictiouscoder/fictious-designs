@@ -14,7 +14,7 @@ export default function ContactForm() {
     event.preventDefault();
 
     const mensagem = [
-      "Olá, Fictious Designs! Gostaria de iniciar um projecto.",
+      "Olá, Fictious Media! Gostaria de iniciar um projecto.",
       "",
       `Nome: ${nome.trim()}`,
       ...(empresa.trim() ? [`Empresa ou marca: ${empresa.trim()}`] : []),
@@ -29,7 +29,7 @@ export default function ContactForm() {
 
     setEmailHref(
       `mailto:fictiousdesigns@gmail.com?subject=${encodeURIComponent(
-        "Novo pedido de projecto - Fictious Designs",
+        "Novo pedido de projecto - Fictious Media",
       )}&body=${encodedMessage}`,
     );
 

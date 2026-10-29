@@ -8,7 +8,7 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Desenvolvimento Web",
   description:
-    "Explora websites, lojas online e experiências digitais desenvolvidas pela Fictious Designs.",
+    "Explora websites, lojas online e experiências digitais desenvolvidas pela Fictious Media.",
 };
 
 export default function DesenvolvimentoWebPage() {
@@ -533,14 +533,14 @@ export default function DesenvolvimentoWebPage() {
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16">
           <p className="text-sm text-zinc-500">
-            © {new Date().getFullYear()} Fictious Designs
+            © {new Date().getFullYear()} Fictious Media
           </p>
 
           <Link
             href="/"
             className="inline-flex w-fit items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-white"
           >
-            Descobrir a Fictious Designs
+            Descobrir a Fictious Media
             <ArrowUpRight size={16} />
           </Link>
         </div>

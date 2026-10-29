@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
@@ -30,7 +30,7 @@ export default function PolicyLayout({
 
           <header className="mt-10 border-b border-white/[0.08] pb-8 sm:mt-14">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-400">
-              Fictious Designs® / Informação legal
+              Fictious Media® / Informação legal
             </p>
 
             <h1 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">

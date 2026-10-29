@@ -10,6 +10,7 @@ import {
   Check,
   ChevronDown,
   Compass,
+  Clock3,
   MapPin,
   MessageCircle,
   Radar,
@@ -21,6 +22,7 @@ import {
 import Navigation from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
 import ScrollReveal from "@/app/components/ScrollReveal";
+import SeoGrowthFlow from "@/app/components/service/SeoGrowthFlow";
 import { getServiceBySlug } from "@/data/services";
 
 const service = getServiceBySlug("seo-local")!;
@@ -68,6 +70,108 @@ const auditItems = [
   },
 ];
 
+const localSeoPackages = [
+  {
+    number: "01",
+    category: "Essencial",
+    name: "Local Start",
+    price: "2.500",
+    billing: "pagamento único",
+    hours: "4–6 horas",
+    delivery: "3–5 dias úteis",
+    recommended: false,
+    description:
+      "Para negócios que querem começar a construir a sua presença nas pesquisas locais.",
+    features: [
+      "Auditoria inicial da presença digital local.",
+      "Configuração ou optimização básica do Perfil de Empresa no Google.",
+      "Actualização dos dados comerciais fornecidos pelo cliente.",
+      "Descrição comercial optimizada.",
+      "Organização de categorias e serviços.",
+      "Adição de website e contactos relevantes.",
+      "Orientações para fotografias adequadas.",
+      "Configuração ou melhoria no Yango Maps, quando disponível e elegível.",
+      "Orientações para recolher avaliações legítimas.",
+    ],
+    details: [
+      "A verificação das plataformas pode demorar mais do que o prazo estimado.",
+      "O cliente deve fornecer informações correctas e comprovar a elegibilidade do negócio.",
+    ],
+  },
+  {
+    number: "02",
+    category: "Profissional",
+    name: "Local Growth",
+    price: "3.500",
+    billing: "por mês",
+    hours: "5–8 h no primeiro mês; 3–5 h nos seguintes",
+    delivery: "5–7 dias úteis para configuração inicial",
+    recommended: true,
+    description:
+      "Para empresas que querem melhorar a relevância local e manter os seus perfis actualizados.",
+    features: [
+      "Tudo do Local Start, incluindo optimização inicial.",
+      "Monitorização mensal do Perfil de Empresa no Google.",
+      "Pesquisa de palavras-chave locais relevantes.",
+      "Optimização de até 10 serviços ou produtos, quando aplicável.",
+      "Até 4 actualizações mensais no Perfil de Empresa no Google.",
+      "Monitorização de avaliações e orientação para respostas profissionais.",
+      "Verificação mensal da consistência dos dados comerciais.",
+      "Relatório mensal de visualizações, pesquisas e interacções disponíveis.",
+      "Recomendações para melhorar a visibilidade local.",
+      "Acompanhamento no Yango Maps, quando permitido pela plataforma.",
+    ],
+    details: [
+      "O primeiro mês inclui aproximadamente 5–8 horas de trabalho; os meses seguintes, 3–5 horas.",
+      "O acompanhamento é contínuo, sujeito à disponibilidade de dados e funcionalidades das plataformas.",
+      "O pagamento mensal é antecipado e o trabalho realizado é documentado num relatório.",
+    ],
+  },
+  {
+    number: "03",
+    category: "Premium",
+    name: "Local Authority",
+    price: "7.500",
+    billing: "por mês",
+    hours: "10–16 h no primeiro mês; 6–10 h nos seguintes",
+    delivery: "7–12 dias úteis para implementação inicial",
+    recommended: false,
+    description:
+      "Para empresas que pretendem trabalhar a visibilidade local de forma mais abrangente, incluindo o website.",
+    features: [
+      "Tudo do Local Growth.",
+      "Auditoria mensal de SEO local e do website existente.",
+      "Pesquisa e mapeamento de palavras-chave locais.",
+      "Optimização on-page de até 5 páginas existentes.",
+      "Optimização de títulos SEO, meta descriptions e cabeçalhos.",
+      "Recomendações para melhorar a experiência em dispositivos móveis.",
+      "Verificação de indexação e problemas técnicos básicos.",
+      "Estratégia de conteúdo orientada para pesquisas locais.",
+      "Análise de até 3 concorrentes locais.",
+      "Monitorização das palavras-chave seleccionadas, através das ferramentas disponíveis.",
+      "Relatório mensal com análise e plano de acção.",
+    ],
+    details: [
+      "O primeiro mês inclui aproximadamente 10–16 horas de trabalho; os meses seguintes, 6–10 horas.",
+      "A implementação depende do acesso ao website, às contas e dos recursos técnicos disponíveis.",
+      "O pagamento mensal é antecipado e o trabalho realizado é documentado num relatório.",
+    ],
+  },
+];
+
+const localSeoOneOffServices = [
+  { name: "Auditoria de presença local", price: "800-1.500 MT" },
+  { name: "Configuração do Perfil de Empresa no Google", price: "1.500-2.000 MT" },
+  { name: "Optimização de perfil existente", price: "1.200-1.800 MT" },
+  { name: "Descrição comercial optimizada", price: "500-800 MT" },
+  { name: "Pesquisa de palavras-chave locais", price: "1.000-2.000 MT" },
+  { name: "Configuração ou melhoria no Yango Maps", price: "500–1.200 MT" },
+  { name: "Auditoria de SEO on-page", price: "1.500–3.000 MT" },
+  { name: "Optimização SEO de uma página", price: "800–1.500 MT" },
+  { name: "Análise de concorrentes locais", price: "1.000–2.000 MT" },
+  { name: "Relatório de desempenho SEO", price: "800–1.500 MT" },
+];
+
 const faqs = service.faqs;
 
 const fadeUp = {
@@ -82,6 +186,7 @@ export default function LocalSeoExperience() {
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [radius, setRadius] = useState(50);
+  const [expandedPackage, setExpandedPackage] = useState<number | null>(1);
 
   const motionTransition = reduceMotion
     ? { duration: 0 }
@@ -99,14 +204,8 @@ export default function LocalSeoExperience() {
     <main className="relative min-h-screen overflow-hidden bg-[#07070A] text-[#F5F5F7]">
       <ScrollReveal />
       <Navigation />
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[720px] overflow-hidden"
-      >
-        <div className="absolute left-1/2 top-[-260px] h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-cyan-500/[0.12] blur-[150px]" />
-        <div className="absolute right-[-160px] top-[260px] h-[380px] w-[380px] rounded-full bg-blue-600/[0.12] blur-[130px]" />
-      </div>
+      <SeoGrowthFlow />
+      <div className="relative z-10">
 
       {/* Hero */}
       <section className="relative px-5 pb-20 pt-32 sm:px-8 sm:pb-28 sm:pt-40 lg:px-16 lg:pb-32">
@@ -389,6 +488,248 @@ export default function LocalSeoExperience() {
                 </motion.article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Pacotes de SEO Local */}
+      <section
+        id="pacotes-seo-local"
+        className="scroll-mt-24 border-y border-white/[0.06] bg-white/[0.015] px-5 py-20 sm:px-8 sm:py-28 lg:px-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-xs font-medium uppercase tracking-[0.24em] text-cyan-300">
+              Investimento em visibilidade local
+            </p>
+            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
+              Escolhe o nível certo para o teu negócio.
+            </h2>
+            <p className="mt-5 max-w-2xl leading-7 text-white/55">
+              Desde uma presença local bem organizada até um trabalho contínuo
+              de SEO no perfil comercial e no website. Cada plano tem um âmbito
+              definido e objectivos realistas.
+            </p>
+          </div>
+
+          <div className="mt-12 grid items-stretch gap-5 lg:grid-cols-3">
+            {localSeoPackages.map((pkg, index) => (
+              <motion.article
+                key={pkg.name}
+                initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                transition={{
+                  ...motionTransition,
+                  delay: reduceMotion ? 0 : index * 0.08,
+                }}
+                className={`relative flex h-full flex-col rounded-3xl border p-6 sm:p-7 ${
+                  pkg.recommended
+                    ? "border-cyan-300/40 bg-cyan-300/[0.055] shadow-xl shadow-cyan-950/10"
+                    : "border-white/10 bg-[#0B0D12]"
+                }`}
+              >
+                {pkg.recommended && (
+                  <span className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/[0.09] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-200">
+                    <Sparkles size={12} />
+                    Recomendado
+                  </span>
+                )}
+
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/40">
+                      {pkg.number} / {pkg.category}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white">
+                      {pkg.name}
+                    </h3>
+                  </div>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/15 bg-cyan-300/[0.06] text-cyan-200">
+                    {index === 0 ? (
+                      <MapPin size={19} />
+                    ) : index === 1 ? (
+                      <Radar size={19} />
+                    ) : (
+                      <Target size={19} />
+                    )}
+                  </span>
+                </div>
+
+                <p className="mt-4 min-h-[3.5rem] text-sm leading-6 text-white/55">
+                  {pkg.description}
+                </p>
+
+                <div className="mt-6 border-b border-white/[0.08] pb-6">
+                  <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <span className="text-4xl font-semibold tracking-[-0.05em] text-white">
+                      {pkg.price}
+                    </span>
+                    <span className="text-sm text-white/45">MT</span>
+                  </div>
+                  <p className="mt-1 text-xs text-white/40">{pkg.billing}</p>
+                </div>
+
+                <div className="mt-5 space-y-3">
+                  {pkg.features.slice(0, expandedPackage === index ? pkg.features.length : 5).map((feature) => (
+                    <div key={feature} className="flex items-start gap-3">
+                      <Check
+                        size={16}
+                        className="mt-0.5 shrink-0 text-cyan-300"
+                      />
+                      <p className="text-sm leading-6 text-white/70">
+                        {feature}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4">
+                  <div className="flex items-start gap-3">
+                    <Clock3 size={16} className="mt-0.5 shrink-0 text-cyan-300" />
+                    <div>
+                      <p className="text-xs font-medium text-white/75">
+                        Tempo estimado de trabalho
+                      </p>
+                      <p className="mt-1 text-xs leading-5 text-white/45">
+                        {pkg.hours}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-start gap-3">
+                    <Compass size={16} className="mt-0.5 shrink-0 text-cyan-300" />
+                    <div>
+                      <p className="text-xs font-medium text-white/75">
+                        Prazo de implementação
+                      </p>
+                      <p className="mt-1 text-xs leading-5 text-white/45">
+                        {pkg.delivery}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  aria-expanded={expandedPackage === index}
+                  onClick={() =>
+                    setExpandedPackage(
+                      expandedPackage === index ? null : index,
+                    )
+                  }
+                  className="mt-5 flex w-full items-center justify-between gap-3 py-2 text-left text-sm text-white/65 transition hover:text-cyan-200"
+                >
+                  <span>{expandedPackage === index ? "Mostrar menos benefícios" : "Ver todos os benefícios"}</span>
+                  <ChevronDown
+                    size={16}
+                    className={`shrink-0 transition-transform ${
+                      expandedPackage === index ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {expandedPackage === index && (
+                  <div className="space-y-2 pb-2">
+                    {pkg.details.map((detail) => (
+                      <p
+                        key={detail}
+                        className="text-xs leading-5 text-white/45"
+                      >
+                        {detail}
+                      </p>
+                    ))}
+                  </div>
+                )}
+
+                <div className="mt-auto pt-7">
+                  <Link
+                    href={`/contactos?servico=seo-local&pacote=${encodeURIComponent(pkg.name)}`}
+                    className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-medium transition ${
+                      pkg.recommended
+                        ? "bg-cyan-300 text-[#071014] hover:bg-cyan-200"
+                        : "border border-white/15 text-white hover:border-cyan-300/40 hover:text-cyan-200"
+                    }`}
+                  >
+                    Pedir orçamento
+                    <ArrowUpRight size={16} />
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          {/* Serviços avulsos */}
+          <div className="mt-20">
+            <div className="max-w-2xl">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-300">
+                Sem compromisso mensal
+              </p>
+              <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                Serviços avulsos
+              </h3>
+              <p className="mt-3 leading-7 text-white/50">
+                Precisas apenas de uma tarefa específica? Podes contratar um
+                serviço individual, conforme as necessidades do teu negócio.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {localSeoOneOffServices.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex items-start justify-between gap-4 rounded-2xl border border-white/[0.08] bg-[#0B0D12] p-5"
+                >
+                  <p className="text-sm leading-6 text-white/70">
+                    {item.name}
+                  </p>
+                  <p className="shrink-0 text-right text-sm font-medium text-cyan-200">
+                    {item.price}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Condições comerciais */}
+          <div className="mt-12 rounded-3xl border border-white/[0.08] bg-white/[0.025] p-6 sm:p-8">
+            <div className="flex items-start gap-3">
+              <ShieldCheck
+                size={21}
+                className="mt-0.5 shrink-0 text-cyan-300"
+              />
+              <div>
+                <h3 className="text-lg font-medium text-white">
+                  Condições importantes
+                </h3>
+                <div className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                  {[
+                    "As contas comerciais permanecem sob propriedade e controlo do cliente.",
+                    "O cliente deve fornecer dados correctos, acessos necessários e comprovativos de elegibilidade.",
+                    "A verificação e aprovação dependem das plataformas; os prazos podem variar.",
+                    "Não garantimos posições específicas no Google, número de clientes ou resultados comerciais.",
+                    "Publicidade paga, orçamento de anúncios, criação de websites, fotografia e ferramentas pagas não estão incluídos.",
+                    "Não compramos nem fabricamos avaliações. As recomendações de resposta devem ser honestas.",
+                    "Os serviços mensais são pagos antecipadamente e acompanhados por relatório.",
+                    "O prazo depende do acesso às contas, dos materiais, das aprovações e da disponibilidade das plataformas.",
+                  ].map((condition) => (
+                    <div key={condition} className="flex items-start gap-3">
+                      <Check
+                        size={15}
+                        className="mt-1 shrink-0 text-cyan-300/80"
+                      />
+                      <p className="text-sm leading-6 text-white/50">
+                        {condition}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <p className="mt-6 border-t border-white/[0.07] pt-5 text-xs leading-5 text-white/35">
+              Os valores apresentados são preços de referência da Fictious
+              Designs. O orçamento final depende do âmbito do trabalho, dos
+              recursos disponíveis e da elegibilidade do negócio nas plataformas.
+            </p>
           </div>
         </div>
       </section>
@@ -751,6 +1092,10 @@ export default function LocalSeoExperience() {
       </section>
 
       <Footer />
+      </div>
     </main>
   );
 }
+
+
+

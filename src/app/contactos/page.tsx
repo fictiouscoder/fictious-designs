@@ -9,7 +9,7 @@ import ContactForm from "@/app/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contactos | Vamos falar sobre o teu projecto",
   description:
-    "Fala com a Fictious Designs sobre design gráfico, branding, redes sociais e desenvolvimento web. Solicita um orçamento pelo WhatsApp ou contacta-nos por email.",
+    "Fala com a Fictious Media sobre design gráfico, branding, redes sociais e desenvolvimento web. Solicita um orçamento pelo WhatsApp ou contacta-nos por email.",
   alternates: {
     canonical: "/contactos",
   },
@@ -35,7 +35,7 @@ export default function ContactosPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 max-w-3xl sm:mb-16">
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-violet-400 sm:text-sm">
-              Contactos · Fictious Designs
+              Contactos · Fictious Media
             </p>
 
             <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl">

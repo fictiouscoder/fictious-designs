@@ -19,28 +19,28 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://fictious-designs.vercel.app"),
   title: {
-    default: "Fictious Designs | Design, Branding e Presenca Digital",
-    template: "%s | Fictious Designs",
+    default: "Fictious Media",
+    template: "%s | Fictious Media",
   },
   description:
     "Transformamos ideias em identidades visuais, websites e estrategias digitais para marcas que querem destacar-se em Mocambique e alem.",
-  applicationName: "Fictious Designs",
+  applicationName: "Fictious Media",
   openGraph: {
-    siteName: "Fictious Designs",
+    siteName: "Fictious Media",
     locale: "pt_MZ",
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/fictious-media-og-image.png",
         width: 1200,
         height: 630,
-        alt: "Fictious Designs - Design, Branding e Presenca Digital",
+        alt: "Fictious Media - Design, Branding e Presença Digital",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og-image.png"],
+    images: ["/fictious-media-og-image.png"],
   },
   robots: {
     index: true,

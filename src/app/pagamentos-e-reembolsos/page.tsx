@@ -2,7 +2,7 @@ import PolicyLayout from "../components/PolicyLayout";
 
 export const metadata: import("next").Metadata = {
   title: "Pagamentos e Reembolsos",
-  description: "Consulta as condicoes de pagamento, cancelamento e reembolso dos servicos da Fictious Designs.",
+  description: "Consulta as condicoes de pagamento, cancelamento e reembolso dos servicos da Fictious Media.",
   alternates: {
     canonical: "/pagamentos-e-reembolsos",
   },
@@ -11,7 +11,7 @@ const sections = [
   {
     title: "1. Condições de pagamento",
     paragraphs: [
-      "O preço, o método de pagamento, os prazos e o calendário de cobrança são definidos de acordo com o serviço contratado e o acordo estabelecido entre a Fictious Designs® e o cliente.",
+      "O preço, o método de pagamento, os prazos e o calendário de cobrança são definidos de acordo com o serviço contratado e o acordo estabelecido entre a Fictious Media® e o cliente.",
       "Quando aplicável, o acordo poderá prever um pagamento inicial, pagamentos por fases ou pagamento integral. As condições acordadas deverão ser esclarecidas antes do início dos trabalhos.",
     ],
   },
@@ -25,7 +25,7 @@ const sections = [
   {
     title: "3. Cancelamento de projetos",
     paragraphs: [
-      "Caso o cliente pretenda cancelar um projeto, deverá comunicar essa intenção à Fictious Designs® para que as partes possam analisar o trabalho realizado, os compromissos assumidos e as condições previstas no acordo.",
+      "Caso o cliente pretenda cancelar um projeto, deverá comunicar essa intenção à Fictious Media® para que as partes possam analisar o trabalho realizado, os compromissos assumidos e as condições previstas no acordo.",
       "As consequências financeiras do cancelamento dependem das condições acordadas e da legislação aplicável. Não se estabelece nesta página uma penalização automática ou uma taxa de cancelamento universal.",
     ],
   },
@@ -46,7 +46,7 @@ const sections = [
   {
     title: "6. Dúvidas e contacto",
     paragraphs: [
-      "Para esclarecer questões sobre pagamentos, cancelamentos ou pedidos de reembolso, o cliente deverá contactar a Fictious Designs® através dos canais disponibilizados no website, indicando os dados necessários para identificar o projeto e o pedido.",
+      "Para esclarecer questões sobre pagamentos, cancelamentos ou pedidos de reembolso, o cliente deverá contactar a Fictious Media® através dos canais disponibilizados no website, indicando os dados necessários para identificar o projeto e o pedido.",
     ],
   },
 ];
@@ -55,7 +55,7 @@ export default function PagamentosEReembolsosPage() {
   return (
     <PolicyLayout
       title="Pagamentos e Reembolsos"
-      description="Informações sobre cobrança, cancelamentos e análise de pedidos de reembolso nos serviços da Fictious Designs®."
+      description="Informações sobre cobrança, cancelamentos e análise de pedidos de reembolso nos serviços da Fictious Media®."
     >
       <div className="space-y-10">
         {sections.map((section) => (

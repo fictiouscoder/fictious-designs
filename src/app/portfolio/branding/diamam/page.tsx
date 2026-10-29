@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "DIAMAM Clothing | Estudo de Caso",
   description:
-    "Conhece o trabalho da Fictious Designs para a DIAMAM, incluindo branding, identidade visual, gestão de redes sociais e desenvolvimento web.",
+    "Conhece o trabalho da Fictious Media para a DIAMAM, incluindo branding, identidade visual, gestão de redes sociais e desenvolvimento web.",
 };
 
 const services = [
@@ -187,7 +187,7 @@ export default function DIAMAMCaseStudyPage() {
 
         <div className="space-y-6 text-base leading-8 text-zinc-400">
           <p>
-            A colaboração entre a Fictious Designs e a DIAMAM
+            A colaboração entre a Fictious Media e a DIAMAM
             estende-se para além da identidade visual. O trabalho
             envolve diferentes áreas da presença digital da marca,
             desde a sua apresentação visual até à comunicação nas
@@ -403,7 +403,7 @@ export default function DIAMAMCaseStudyPage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-16 sm:px-10 lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:py-20">
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-violet-300">
-              Fictious Designs
+              Fictious Media
             </p>
 
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -425,7 +425,7 @@ export default function DIAMAMCaseStudyPage() {
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16">
           <p className="text-sm text-zinc-500">
-            © {new Date().getFullYear()} Fictious Designs
+            © {new Date().getFullYear()} Fictious Media
           </p>
 
           <Link

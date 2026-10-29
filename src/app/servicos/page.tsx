@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "Serviços de Design, Marketing e Desenvolvimento Web",
   description:
-    "Descobre os serviços da Fictious Designs: branding, design gráfico, gestão de redes sociais, desenvolvimento web, marketing digital e SEO local.",
+    "Descobre os serviços da Fictious Media: branding, design gráfico, gestão de redes sociais, desenvolvimento web, marketing digital e SEO local.",
   alternates: {
     canonical: "/servicos",
   },
@@ -45,7 +45,7 @@ const services = [
       "Uma marca visualmente coerente, reconhecível e preparada para comunicar o seu valor.",
     href: "/servicos/branding",
     message:
-      "Olá, Fictious Designs! Tenho interesse nos serviços de Design Gráfico e Branding.",
+      "Olá, Fictious Media! Tenho interesse nos serviços de Design Gráfico e Branding.",
   },
   {
     id: "redes-sociais",
@@ -100,7 +100,7 @@ const services = [
       "Acções digitais com uma direcção estratégica, objectivos definidos e maior clareza na comunicação.",
     href: "/servicos/marketing-digital",
     message:
-      "Olá, Fictious Designs! Gostaria de saber mais sobre Marketing Digital e Ads.",
+      "Olá, Fictious Media! Gostaria de saber mais sobre Marketing Digital e Ads.",
   },
   {
     id: "estrategia-conteudo",
@@ -119,7 +119,7 @@ const services = [
       "Conteúdos com propósito, uma mensagem consistente e uma comunicação mais bem organizada.",
     href: "/servicos/estrategia-conteudo",
     message:
-      "Olá, Fictious Designs! Tenho interesse nos serviços de Estratégia de Conteúdo.",
+      "Olá, Fictious Media! Tenho interesse nos serviços de Estratégia de Conteúdo.",
   },
   {
     id: "seo-local",
@@ -138,7 +138,7 @@ const services = [
       "Uma presença local mais organizada e preparada para ser encontrada por potenciais clientes.",
     href: "/servicos/seo-local",
     message:
-      "Olá, Fictious Designs! Gostaria de saber mais sobre SEO Local.",
+      "Olá, Fictious Media! Gostaria de saber mais sobre SEO Local.",
   },
 ];
 
@@ -194,7 +194,7 @@ export default function ServicosPage() {
 
               <a
                 href={getWhatsAppLink(
-                  "Olá, Fictious Designs! Gostaria de conversar sobre um projecto para a minha marca.",
+                  "Olá, Fictious Media! Gostaria de conversar sobre um projecto para a minha marca.",
                 )}
                 target="_blank"
                 rel="noreferrer"
@@ -274,7 +274,7 @@ export default function ServicosPage() {
                   : "message" in service && service.message
                     ? getWhatsAppLink(service.message)
                     : getWhatsAppLink(
-                        "Olá, Fictious Designs! Gostaria de saber mais sobre " +
+                        "Olá, Fictious Media! Gostaria de saber mais sobre " +
                           service.title +
                           ".",
                       );
@@ -396,7 +396,7 @@ export default function ServicosPage() {
 
               <a
                 href={getWhatsAppLink(
-                  "Olá, Fictious Designs! Gostaria de conversar sobre um projecto para a minha marca.",
+                  "Olá, Fictious Media! Gostaria de conversar sobre um projecto para a minha marca.",
                 )}
                 target="_blank"
                 rel="noreferrer"
